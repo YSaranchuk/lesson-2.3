@@ -38,7 +38,7 @@ if (!empty($_POST['form_answer'])) {
     if ($post_true === $result_true && $post_false === 0) {
         $test_success++;
     }elseif ($post_true > 0 && $post_false > 0) {
-        echo 'Почти угадали =)';
+        echo 'Ну почти =)';
     }else{
         echo 'Вы ошиблись =(';
     }
@@ -51,7 +51,7 @@ if (!empty($_POST['name_form']))
     $backColor = imagecolorallocate($im, 255, 224, 221);
     $textColor = imagecolorallocate($im, 0, 0, 0);
     $fontFile = 'FONT.ttf';
-    $imBox = imagecreatefromjpeg('cover_big.jpg');
+    $imBox = imagecreatefromjpeg('cert.jpg');
     imagefill($im, 0, 0, $backColor);
     imagecopy($im, $imBox, 0, 0, 0, 0, 565, 800);
     imagettftext($im, 20, 0, 170, 392, $textColor, $fontFile, $name);
