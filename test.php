@@ -48,17 +48,17 @@ if (!empty($_POST['name_form']))
 {
     $name = $_POST['name_form'];
     $im = imagecreatetruecolor(565, 800);
-    $backColor = imagecolorallocate($im, 250, 221, 220);
+    $backColor = imagecolorallocate($im, 255, 224, 221);
     $textColor = imagecolorallocate($im, 0, 0, 0);
     $fontFile = 'FONT.ttf';
-    $imBox = imagecreatefrompng('Certificate-Template-Free-PNG-Image.png');
+    $imBox = imagecreatefromjpeg('cover_big.jpg');
     imagefill($im, 0, 0, $backColor);
     imagecopy($im, $imBox, 0, 0, 0, 0, 565, 800);
-    imagettftext($im, 20, 0, 170, 390, $textColor, $fontFile, $name);
-    imagettftext($im, 20, 0, 170, 400, $textColor, $fontFile, 'Оценка: отлично');
-    imagettftext($im, 15, 0, 385, 740, $textColor, $fontFile, date("d.m.y"));
-    //header('Content-Type: image/png');
-    imagepng($im, 'certificate.png');
+    imagettftext($im, 20, 0, 170, 392, $textColor, $fontFile, $name);
+    imagettftext($im, 20, 0, 170, 420, $textColor, $fontFile, 'Оценка: отлично');
+    imagettftext($im, 15, 0, 385, 745, $textColor, $fontFile, date("d.m.y"));
+    //header('Content-Type: image/jpeg');
+    imagejpeg($im, 'certificate.jpg');
     imagedestroy($im);
 }
 ?>
@@ -93,7 +93,7 @@ if (!empty($_POST['name_form']))
 <?php endif;?>
 
 <?php if (!empty($_POST['name_form'])): ?>
-    <img src="certificate.png" alt="Ваш сертификат">
+    <img src="certificate.jpg" alt="Ваш сертификат">
 <?php endif;?>
 
 
