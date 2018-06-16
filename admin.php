@@ -8,6 +8,7 @@ if (isset($_POST) && isset($_FILES) && isset($_FILES['testfile'])) {
         move_uploaded_file($tmp_file, $uploads_dir . $file_name);
         //echo 'Спасибо, Ваш тест загружен!';
         header('Location: ' . 'list.php');
+       // Вопрос если я здесь поставлю  exit; и остановлю скрипт то else уже не нужен? 
     }else{
         echo 'Извините, нужен файл с расширением JSON';
     }
