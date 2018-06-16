@@ -6,7 +6,7 @@ if (isset($_POST) && isset($_FILES) && isset($_FILES['testfile'])) {
     $path_info = pathinfo($uploads_dir . $file_name);
     if ($path_info['extension'] === 'json') {
         move_uploaded_file($tmp_file, $uploads_dir . $file_name);
-        //echo 'Спасибо, Ваш тест загружен!'; return tru;
+        //echo 'Спасибо, Ваш тест загружен!'; return true;
         header('Location: ' . 'list.php');
        // Вопрос если я здесь поставлю  exit; и остановлю скрипт то else уже не нужен? 
     }else{
