@@ -58,7 +58,7 @@ if (!empty($_POST['name_form']))
     //imagettftext($im, 20, 0, 170, 420, $textColor, $fontFile, 'Оценка: отлично');
     //imagettftext($im, 15, 0, 385, 745, $textColor, $fontFile, date("d.m.y"));
     //header('Content-Type: image/jpeg');
-    //imagejpeg($im, 'certificate.jpg');
+    //imagejpeg($im, 'cert.jpg');
     //imagedestroy($im);
 }
 ?>
