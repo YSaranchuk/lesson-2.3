@@ -10,7 +10,7 @@ foreach ($file_list as $key => $file) {
 }
 // Проверяем массив test, если пустой, то 404
 if (empty($test)) {
-    header("HTTP/1.0 404 Not Found");
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found"); //правки
     exit;
 }
 $question = $test[0]['question'];
