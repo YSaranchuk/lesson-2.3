@@ -6,12 +6,13 @@ if (isset($_POST) && isset($_FILES) && isset($_FILES['testfile'])) {
     $path_info = pathinfo($uploads_dir . $file_name);
     if ($path_info['extension'] === 'json') {
         move_uploaded_file($tmp_file, $uploads_dir . $file_name);
-        //echo 'Спасибо, Ваш тест загружен!'; return true;
+        return true; //echo 'Спасибо, Ваш тест загружен!'
         header('Location: ' . 'list.php');
-       // Вопрос если я здесь поставлю  exit; и остановлю скрипт то else уже не нужен? 
-    }else{
-        echo 'Извините, нужен файл с расширением JSON';
-    }
+        exit;
+       // Правки: Вопрос если я здесь поставлю  exit; и остановлю скрипт то else уже не нужен? 
+    }//else{
+        //echo 'Извините, нужен файл с расширением JSON';
+    //}
 }
 ?>
 <!doctype html>
