@@ -93,7 +93,7 @@ if (!empty($_POST['name_form']))
 <?php endif;?>
 
 <?php if (!empty($_POST['name_form'])): ?>
-    <img src="certificate.jpg" alt="Ваш сертификат">
+    <img src="cert.jpg" alt="Ваш сертификат">
 <?php endif;?>
 
 
