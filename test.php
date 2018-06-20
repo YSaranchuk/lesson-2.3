@@ -48,19 +48,28 @@ if (!empty($_POST['form_answer'])) {
 if (!empty($_POST['name_form']))
 {
     $name = $_POST['name_form'];
-   // Правки: так было $im = imagecreatetruecolor(565, 800);
-   // $backColor = imagecolorallocate($im, 255, 224, 221);
-   // $textColor = imagecolorallocate($im, 0, 0, 0);
-  //  $fontFile = 'FONT.ttf';
-    //$imBox = imagecreatefromjpeg('cert.jpg');
-   // imagefill($im, 0, 0, $backColor);
-    //imagecopy($im, $imBox, 0, 0, 0, 0, 565, 800);
-    //imagettftext($im, 20, 0, 170, 392, $textColor, $fontFile, $name);
-    //imagettftext($im, 20, 0, 170, 420, $textColor, $fontFile, 'Оценка: отлично');
-    //imagettftext($im, 15, 0, 385, 745, $textColor, $fontFile, date("d.m.y"));
-    //header('Content-Type: image/jpeg');
-    //imagejpeg($im);
-    //imagedestroy($im);
+    $im = imagecreatetruecolor(565, 800);
+    $backColor = imagecolorallocate($im, 255, 224, 221);
+    $textColor = imagecolorallocate($im, 0, 0, 0);
+    $fontFile = _DIR_ , 'FONT.ttf';
+    if(!file_exists($fontFile)) {
+        echo 'файл с шрифтом не найден ';
+        exit;
+    }
+     $boxFile = _DIR_ , 'cert.jpg';
+    if (!file_exists($boxFile)) {
+        echo 'файл с сертификатом не найден';
+        exit;
+    }
+    $imBox = imagecreatefromjpeg($boxFile);
+    imagefill($im, 0, 0, $backColor);
+    imagecopy($im, $imBox, 0, 0, 0, 0, 565, 800);
+    imagettftext($im, 20, 0, 170, 392, $textColor, $fontFile, $name);
+    imagettftext($im, 20, 0, 170, 420, $textColor, $fontFile, 'Оценка: отлично');
+    imagettftext($im, 15, 0, 385, 745, $textColor, $fontFile, date("d.m.y"));
+    header('Content-Type: image/jpeg');
+    imagejpeg($im);//если здесь не выводить второй параметр cert.jpg то как быть со 106 строкой...
+    imagedestroy($im);
 }
 ?>
 
