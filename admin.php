@@ -9,7 +9,7 @@ if (isset($_POST) && isset($_FILES) && isset($_FILES['testfile'])) {
         return true; //echo 'Спасибо, Ваш тест загружен!'
         header('Location: ' . 'list.php');
         exit;
-       // Правки: Вопрос если я здесь поставлю  exit; и остановлю скрипт то else уже не нужен? 
+       // Правки: 
     }//else{
         //echo 'Извините, нужен файл с расширением JSON';
     //}
