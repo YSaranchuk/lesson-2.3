@@ -47,19 +47,19 @@ if (!empty($_POST['form_answer'])) {
 if (!empty($_POST['name_form']))
 {
     $name = $_POST['name_form'];
-    $im = imagecreatetruecolor(565, 800);
-    $backColor = imagecolorallocate($im, 255, 224, 221);
-    $textColor = imagecolorallocate($im, 0, 0, 0);
-    $fontFile = 'FONT.ttf';
-    $imBox = imagecreatefromjpeg('cert.jpg');
-    imagefill($im, 0, 0, $backColor);
-    imagecopy($im, $imBox, 0, 0, 0, 0, 565, 800);
-    imagettftext($im, 20, 0, 170, 392, $textColor, $fontFile, $name);
-    imagettftext($im, 20, 0, 170, 420, $textColor, $fontFile, 'Оценка: отлично');
-    imagettftext($im, 15, 0, 385, 745, $textColor, $fontFile, date("d.m.y"));
+   // Правки: так было $im = imagecreatetruecolor(565, 800);
+   // $backColor = imagecolorallocate($im, 255, 224, 221);
+   // $textColor = imagecolorallocate($im, 0, 0, 0);
+  //  $fontFile = 'FONT.ttf';
+    //$imBox = imagecreatefromjpeg('cert.jpg');
+   // imagefill($im, 0, 0, $backColor);
+    //imagecopy($im, $imBox, 0, 0, 0, 0, 565, 800);
+    //imagettftext($im, 20, 0, 170, 392, $textColor, $fontFile, $name);
+    //imagettftext($im, 20, 0, 170, 420, $textColor, $fontFile, 'Оценка: отлично');
+    //imagettftext($im, 15, 0, 385, 745, $textColor, $fontFile, date("d.m.y"));
     //header('Content-Type: image/jpeg');
-    imagejpeg($im, 'certificate.jpg');
-    imagedestroy($im);
+    //imagejpeg($im, 'certificate.jpg');
+    //imagedestroy($im);
 }
 ?>
 
